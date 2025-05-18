@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center">Login</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="email"><b>Email</b></label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password"><b>Password</b></label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <div id="login-message" class="text-center" style="margin-top: 10px;"></div>
+      </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        // Handle login form submission
+        $("#login-form").submit(function (event) {
+          event.preventDefault(); // Prevent form from refreshing the page
+
+          const loginData = {
+            email: $("#email").val(),
+            password: $("#password").val(),
+          };
+
+          $.ajax({
+            url: "http://localhost:4000/api/login", // Replace with your API endpoint
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(loginData),
+            success: function (response) {
+              if (response.authenticated) {
+                // Redirect to dashboard
+                window.location.href = "dashboard.html"; // Replace with your dashboard URL
+              } else {
+                // Display invalid credentials message
+                $("#login-message").text("Invalid credentials").css("color", "red");
+              }
+            },
+            error: function (error) {
+              $("#login-message").text("An error occurred. Please try again.").css("color", "red");
+              console.error("Error during login:", error);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

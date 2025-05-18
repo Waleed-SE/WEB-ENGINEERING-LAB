@@ -1,0 +1,9 @@
+.list-group-item.done {
+  text-decoration: line-through;
+  color: gray;
+}
+.editable {
+  background-color: #f8f9fa;
+  border: none;
+  font-style: italic;
+}

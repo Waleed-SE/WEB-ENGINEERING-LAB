@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Wireless Mouse",
+    "category": "Electronics",
+    "price": 15.99,
+    "description": "A comfortable and responsive wireless mouse."
+  },
+  {
+    "name": "Yoga Mat",
+    "category": "Fitness",
+    "price": 20.49,
+    "description": "Durable yoga mat with extra cushioning for comfort."
+  },
+  {
+    "name": "Coffee Mug",
+    "category": "Kitchenware",
+    "price": 8.99,
+    "description": "Stylish ceramic mug for your morning coffee."
+  },
+  {
+    "name": "LED Desk Lamp",
+    "category": "Furniture",
+    "price": 25.99,
+    "description": "Adjustable LED desk lamp with multiple brightness settings."
+  },
+  {
+    "name": "Gaming Chair",
+    "category": "Furniture",
+    "price": 99.99,
+    "description": "Ergonomic gaming chair with lumbar support and reclining feature."
+  }
+]

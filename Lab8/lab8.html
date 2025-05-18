@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <title>Manage Products</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center">Product Inventory</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="product-table-body">
+          <!-- Product rows will be dynamically added here -->
+        </tbody>
+      </table>
+      <div id="message" class="text-center" style="margin-top: 10px;"></div>
+    </div>
+
+    <!-- Modal for Editing Product -->
+    <div id="editModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Edit Product</h4>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="edit-id" />
+            <div class="form-group">
+              <label for="edit-name">Product Name</label>
+              <input type="text" id="edit-name" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="edit-category">Category</label>
+              <input type="text" id="edit-category" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="edit-price">Price</label>
+              <input type="number" id="edit-price" class="form-control" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="saveChanges();"
+            >
+              Save Changes
+            </button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      // Fetch products and populate the table
+      function fetchProducts() {
+        $.ajax({
+          url: "http://localhost:4000/api/products", // Replace with your API endpoint
+          type: "GET",
+          success: function (products) {
+            const tableBody = document.getElementById("product-table-body");
+            tableBody.innerHTML = ""; // Clear existing rows
+
+            products.forEach(function (product) {
+              const row = `
+                <tr id="row-${product.id}">
+                  <td>${product.id}</td>
+                  <td>${product.name}</td>
+                  <td>${product.category}</td>
+                  <td>${product.price}</td>
+                  <td>
+                    <button class="btn btn-warning" onclick="editProduct(${product.id}, '${product.name}', '${product.category}', ${product.price});">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteProduct(${product.id});">Delete</button>
+                  </td>
+                </tr>
+              `;
+              tableBody.innerHTML += row;
+            });
+          },
+          error: function (error) {
+            document.getElementById("message").innerText =
+              "Failed to fetch products. Please try again.";
+            document.getElementById("message").style.color = "red";
+            console.error("Error occurred:", error);
+          },
+        });
+      }
+
+      // Populate modal with product details for editing
+      function editProduct(id, name, category, price) {
+        $("#edit-id").val(id);
+        $("#edit-name").val(name);
+        $("#edit-category").val(category);
+        $("#edit-price").val(price);
+        $("#editModal").modal("show"); // Show modal popup
+      }
+
+      // Save changes (AJAX PUT request)
+      function saveChanges() {
+        const id = $("#edit-id").val();
+        const updatedProduct = {
+          name: $("#edit-name").val(),
+          category: $("#edit-category").val(),
+          price: $("#edit-price").val(),
+        };
+
+        // AJAX PUT request
+        $.ajax({
+          url: `http://localhost:4000/api/products/${id}`, // Replace with your API endpoint
+          type: "PUT",
+          contentType: "application/json",
+          data: JSON.stringify(updatedProduct),
+          success: function (response) {
+            $("#editModal").modal("hide"); // Close the modal
+            fetchProducts(); // Refresh the table
+            document.getElementById("message").innerText =
+              "Product updated successfully!";
+            document.getElementById("message").style.color = "green";
+          },
+          error: function (error) {
+            document.getElementById("message").innerText =
+              "Failed to update product. Please try again.";
+            document.getElementById("message").style.color = "red";
+            console.error("Error occurred:", error);
+          },
+        });
+      }
+
+      // Delete product (AJAX DELETE request)
+      function deleteProduct(productId) {
+        if (confirm("Are you sure you want to delete this product?")) {
+          $.ajax({
+            url: `http://localhost:4000/api/products/${productId}`, // Replace with your API endpoint
+            type: "DELETE",
+            success: function (response) {
+              document.getElementById(`row-${productId}`).remove(); // Remove the row dynamically
+              document.getElementById("message").innerText =
+                "Product deleted successfully!";
+              document.getElementById("message").style.color = "green";
+            },
+            error: function (error) {
+              document.getElementById("message").innerText =
+                "Failed to delete product. Please try again.";
+              document.getElementById("message").style.color = "red";
+              console.error("Error occurred:", error);
+            },
+          });
+        }
+      }
+
+      // Fetch products when the page loads
+      window.onload = function () {
+        fetchProducts();
+      };
+    </script>
+  </body>
+</html>

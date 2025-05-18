@@ -1,0 +1,43 @@
+/* Custom styles integrated with Bootstrap */
+body {
+  font-family: Arial, sans-serif; /* Optional since Bootstrap uses system fonts */
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa; /* Updated to match Bootstrap's light background */
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners for consistency */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+}
+
+h1 {
+  text-align: center;
+  color: #343a40; /* Bootstrap's text-dark equivalent */
+}
+
+.alert {
+  display: none; /* Hidden by default, will be displayed dynamically via JS */
+}
+
+.alert.success {
+  display: block; /* Same behavior as Bootstrap's `alert-success` */
+}
+
+.alert.error {
+  display: block; /* Same behavior as Bootstrap's `alert-danger` */
+}
+
+/* Button customization */
+button.btn {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.btn:hover {
+  background-color: #0056b3; /* Maintain hover consistency */
+}

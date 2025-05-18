@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Ali Khan",
+    "email": "ali.khan@example.com",
+    "password": "password123",
+    "department": "Computer Science"
+  },
+  {
+    "name": "Aisha Ahmed",
+    "email": "aisha.ahmed@example.com",
+    "password": "password456",
+    "department": "Electrical Engineering"
+  },
+  {
+    "name": "Bilal Hussain",
+    "email": "bilal.hussain@example.com",
+    "password": "password789",
+    "department": "Mechanical Engineering"
+  },
+  {
+    "name": "Sara Malik",
+    "email": "sara.malik@example.com",
+    "password": "password123",
+    "department": "Civil Engineering"
+  },
+  {
+    "name": "Omar Farooq",
+    "email": "omar.farooq@example.com",
+    "password": "password123",
+    "department": "Business Administration"
+  }
+]

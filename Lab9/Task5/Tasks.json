@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Complete project report",
+    "completed": false
+  },
+  {
+    "name": "Buy groceries",
+    "completed": true
+  },
+  {
+    "name": "Schedule team meeting",
+    "completed": false
+  },
+  {
+    "name": "Prepare for presentation",
+    "completed": true
+  },
+  {
+    "name": "Call the plumber",
+    "completed": false
+  }
+]

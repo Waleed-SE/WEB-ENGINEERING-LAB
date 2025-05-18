@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./task1.css">
+  </head>
+  <body>
+    <h1>Calculate Your Bill</h1>
+
+    <label for="totalBill">Total Bill</label>
+    <input id="totalBill" type="number" value="0" required/>
+    <br />
+
+    <label for="tips">Tips %</label>
+    <input id="tips" type="number"  value="0" required/>
+    <br />
+
+    <label for="totalPeople">People</label>
+    <input id="totalPeople" type="text" value="0" required></input>
+    <button id="incrementPeople" onclick="increment()">+</button>
+    <button id="decrementPeople" onclick="decrement()">-</button>
+
+    <button id="calculate" onclick="calculateBill()">Calculate</button>
+    
+
+    <h2 id="summary">Summary</h2>
+    <label for="totalSummary">Total: </label>
+    <label id="totalSummary">$0</label>
+    <br />
+    <label for="tipsSummary">Tips: </label>
+    <label id="tipsSummary">$0</label>
+    <br />
+    <label for="taxSummary">Tax: </label>
+    <label id="taxSummary">$0</label>
+    <br />
+    <label for="grandTotalSummary">Grand Total: </label>
+    <label id="grandTotalSummary">$0</label>
+    <script src="./task1.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hotel Booking Form</h1>
+    <form>
+      <label for="name">Guest Name: </label>
+      <input id="name" type="text" /><br /><br />
+      <label for="email">Email: </label>
+      <input id="email" type="email" /><br /><br />
+
+      <label for="checkin">Check In</label>
+      <input id="checkin" type="date" /><br /><br />
+      <label for="checkout">Check Out</label>
+      <input id="checkout" type="date" /><br /><br />
+
+      <label for="guest">Number Of Guests: </label>
+      <select name="guest" id="guest">
+        <option value="p1">1</option>
+        <option value="p2">2</option>
+        <option value="p3">3</option>
+        <option value="p4">4</option>
+        <option value="p5">5</option>
+      </select>
+      <br /><br />
+
+      <label for="roomPreference"></label>
+      <label for="single">Single</label>
+      <input id="single" name="roomPreference" type="radio" />
+      <label for="double">Double</label>
+      <input id="double" name="roomPreference" type="radio" />
+      <label for="suite">Suite</label>
+      <input id="suite" name="roomPreference" type="radio" /><br /><br />
+
+      <label for="services">Additional Services: </label><br />
+      <label for="wifi">WIfi: </label>
+      <input id="wifi" name="services" type="checkbox" />
+      <label for="breakfast">&ensp;&ensp;Breakfast: </label>
+      <input id="breakfast" name="services" type="checkbox" />
+      <label for="airportPickup">&ensp;&ensp;Airport Pickup: </label>
+      <input id="airportPickup" name="services" type="checkbox" />
+
+      <input type="button" value="submit" />
+    </form>
+  </body>
+</html>

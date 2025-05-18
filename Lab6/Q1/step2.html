@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step 2 - Confirm Details</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Step 2: Confirm Your Details</h2>
+      <p><strong>Name:</strong> <span id="displayName"></span></p>
+      <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+
+      <form id="step2Form">
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Enter your phone number"
+          required
+        />
+        <button type="submit">Submit</button>
+      </form>
+
+      <p id="confirmationMessage" style="display: none">
+        Registration Completed Successfully!
+      </p>
+    </div>
+
+    <script src="./step2.js"></script>
+  </body>
+</html>

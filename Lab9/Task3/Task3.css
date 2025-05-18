@@ -1,0 +1,65 @@
+/* General Body Styling */
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+/* Container Styling */
+.container {
+  max-width: 900px;
+}
+
+/* Card Styling */
+.card {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: none;
+}
+
+/* Form Labels */
+.form-label {
+  font-weight: bold;
+}
+
+/* Table Styling */
+.table {
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table th {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+}
+
+.table td,
+.table th {
+  padding: 15px;
+  vertical-align: middle;
+  border-top: 1px solid #dee2e6;
+}
+
+.table tbody tr {
+  background-color: #fff;
+}
+
+.table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Button Styling */
+button {
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Primary Button Hover */
+.btn-primary:hover {
+  background-color: #0056b3;
+}

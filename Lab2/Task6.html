@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Job Application Form</h1>
+    <form>
+      <label for="name">Applicant Name: </label>
+      <input id="name" type="text" /><br /><br />
+      <label for="email">Email: </label>
+      <input id="email" type="email" /><br /><br />
+
+      <label for="position">Position: </label>
+      <select name="position" id="position">
+        <option value="manager">Manager</option>
+        <option value="clerk">Clerk</option>
+        <option value="accountant">Accountant</option>
+      </select>
+      <br /><br />
+
+      <label for="resume">Upload Resume: </label>
+      <input id="resume" type="file" /><br /><br />
+
+      <label for="skills">Skills: </label>
+      <textarea id="skills"></textarea><br /><br />
+
+      <label for="agree"
+        >I certify that all information provided is true.</label
+      >
+      <input id="agree" type="checkbox" /><br /><br />
+
+      <input id="submit" value="Submit" type="button" />
+    </form>
+  </body>
+</html>

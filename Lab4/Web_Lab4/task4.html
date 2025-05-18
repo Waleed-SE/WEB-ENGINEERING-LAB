@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management</title>
+    <link rel="stylesheet" href="./task4.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Project Management</h1>
+
+        <div class="add-project-form">
+            <h2>Add New Project</h2>
+            <input type="text" id="projectTitle" placeholder="Project Title" />
+            <textarea id="projectDescription" placeholder="Project Description"></textarea>
+            <select id="projectStatus">
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <button id="addProjectButton">Add Project</button>
+        </div>
+
+        <div class="search-filter">
+            <input type="text" id="searchInput" placeholder="Search projects by title" />
+            <select id="statusFilter">
+                <option value="All">All Statuses</option>
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+        </div>
+
+        <div id="projectList" class="project-list"></div>
+    </div>
+
+    <script src="./task4.js"></script>
+</body>
+</html>

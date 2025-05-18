@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Event Registration Form</h1>
+    <form>
+      <label for="name">Participant Name: </label>
+      <input id="name" type="text" /><br />
+      <label for="email">Email: </label>
+      <input id="email" type="email" /><br />
+      <label for="contactNo">Contact No: </label>
+      <input id="contactNo" type="tel" /><br />
+
+      <label for="eventType"><h3>Event Type:</h3></label><br />
+      <label for="conference"> Conference: </label>
+      <input id="conference" name="eventType" type="radio" />
+      <label for="workshop"> &ensp;&ensp;Workshop: </label>
+      <input id="workshop" name="eventType" type="radio" />
+      <label for="webinar"> &ensp;&ensp;Webinar: </label>
+      <input id="webinar" name="eventType" type="radio" /><br />
+
+      <label for="diet">Diet Preference: </label>
+      <select name="diet" id="diet">
+        <option value="vege">Vegeterian</option>
+        <option value="nonVege">Non-Vegeterian</option>
+        <option value="vegan">Vegan</option>
+      </select>
+      <br />
+
+      <label for="agree">I agree to the terms and conditions.</label>
+      <input id="agree" type="checkbox" />
+
+      <input id="submit" value="Submit" type="button" />
+    </form>
+  </body>
+</html>

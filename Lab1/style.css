@@ -1,0 +1,24 @@
+body {
+    background-color: gray;
+  }
+  
+  h1 {
+    color: navy;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 20px;
+  }
+
+  .FontStyle {
+    color: aqua;
+    margin-left: 20px;
+    font-style: italic;
+    font-family: sans-serif;
+    font-variant: initial;
+  }
+
+  img {
+    padding: 20px;
+    margin: 20px;
+    border: 3px;
+    border-style: dotted;
+  }

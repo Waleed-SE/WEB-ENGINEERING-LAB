@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <title>Student Registration</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center">Student Registration</h2>
+      <form id="registration-form">
+        <div class="form-group">
+          <label for="name"><b>Name</b></label>
+          <input type="text" id="name" class="form-control" placeholder="Enter your name" required />
+        </div>
+        <div class="form-group">
+          <label for="email"><b>Email</b></label>
+          <input type="email" id="email" class="form-control" placeholder="Enter your email" required />
+          <div id="email-message" style="color: red; margin-top: 5px;"></div>
+        </div>
+        <div class="form-group">
+          <label for="password"><b>Password</b></label>
+          <input type="password" id="password" class="form-control" placeholder="Enter your password" required />
+        </div>
+        <button type="submit" class="btn btn-primary" id="register-btn">Register</button>
+        <div id="registration-message" class="text-center" style="margin-top: 10px;"></div>
+      </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        // Check email availability
+        $("#email").on("input", function () {
+          const email = $(this).val();
+
+          if (email) {
+            $.ajax({
+              url: "http://localhost:4000/api/check-email", // Replace with your API endpoint
+              type: "POST",
+              contentType: "application/json",
+              data: JSON.stringify({ email }),
+              success: function (response) {
+                if (response.exists) {
+                  $("#email-message").text("Email already registered!");
+                  $("#register-btn").prop("disabled", true);
+                } else {
+                  $("#email-message").text("");
+                  $("#register-btn").prop("disabled", false);
+                }
+              },
+              error: function (error) {
+                console.error("Error checking email availability:", error);
+              },
+            });
+          }
+        });
+
+        // Handle registration form submission
+        $("#registration-form").submit(function (event) {
+          event.preventDefault(); // Prevent form from refreshing the page
+
+          const studentData = {
+            name: $("#name").val(),
+            email: $("#email").val(),
+            password: $("#password").val(),
+          };
+
+          $.ajax({
+            url: "http://localhost:4000/api/register", // Replace with your API endpoint
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(studentData),
+            success: function (response) {
+              $("#registration-message").text("Registration successful!").css("color", "green");
+              $("#registration-form")[0].reset(); // Reset the form fields
+              $("#email-message").text(""); // Clear any email warning
+            },
+            error: function (error) {
+              $("#registration-message").text("Failed to register. Please try again.").css("color", "red");
+              console.error("Error occurred during registration:", error);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
