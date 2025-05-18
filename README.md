@@ -85,7 +85,9 @@ Each lab folder contains its own README with specific setup instructions and det
 - A text editor or IDE (VS Code recommended)
 - Node.js and npm (for Labs 7-9)
 - MySQL (for Labs 7-8)
+  - Database schemas are provided in `database_schema.sql` files
 - MongoDB (for Lab 9)
+  - Mongoose models are provided in `database_schema.js`
 
 ### Setup Overview
 

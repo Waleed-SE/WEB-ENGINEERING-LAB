@@ -1,7 +1,9 @@
 // MongoDB Schema for Lab 9
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 // Student Schema (for Task1)
-const StudentSchema = {
+const StudentSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -23,10 +25,10 @@ const StudentSchema = {
     type: Date,
     default: Date.now,
   },
-};
+});
 
 // Product Schema (for Task2)
-const ProductSchema = {
+const ProductSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -50,10 +52,10 @@ const ProductSchema = {
     type: Date,
     default: Date.now,
   },
-};
+});
 
 // Job Schema (for Task4)
-const JobSchema = {
+const JobSchema = new Schema({
   title: {
     type: String,
     required: true,
@@ -81,10 +83,10 @@ const JobSchema = {
     type: Date,
     default: Date.now,
   },
-};
+});
 
 // Applicant Schema (for Task4)
-const ApplicantSchema = {
+const ApplicantSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -102,7 +104,8 @@ const ApplicantSchema = {
     type: String,
   },
   jobId: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: "Job",
     required: true,
   },
   status: {
@@ -114,4 +117,18 @@ const ApplicantSchema = {
     type: Date,
     default: Date.now,
   },
+});
+
+// Create models
+const Student = mongoose.model("Student", StudentSchema);
+const Product = mongoose.model("Product", ProductSchema);
+const Job = mongoose.model("Job", JobSchema);
+const Applicant = mongoose.model("Applicant", ApplicantSchema);
+
+// Export models
+module.exports = {
+  Student,
+  Product,
+  Job,
+  Applicant,
 };

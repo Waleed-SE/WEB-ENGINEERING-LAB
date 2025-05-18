@@ -95,7 +95,7 @@ This lab focuses on creating a full-stack web application with a Node.js backend
    ```
    npm start
    ```
-2. The server will run on default port (typically port 3000)
+2. The server will run on port 4000
 3. Open `lab8.html`, `login.html`, or `register.html` in a web browser
    - You may need to serve these HTML files using a simple HTTP server or open them directly
 

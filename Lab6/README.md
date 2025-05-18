@@ -6,21 +6,21 @@ This lab focuses on building complete JavaScript applications including form pro
 
 ### Q1: Multi-step Form
 
-- `step1.html`, `step1.js`: First step of a multi-step form
-- `step2.html`, `step2.js`: Second step of a multi-step form
-- `style.css`: Styling for the multi-step form
+- `Q1/step1.html`, `Q1/step1.js`: First step of a multi-step form
+- `Q1/step2.html`, `Q1/step2.js`: Second step of a multi-step form
+- `Q1/style.css`: Styling for the multi-step form
 
 ### Q2: Shopping Cart
 
-- `products.html`, `products.js`: Product listing page
-- `cart.html`, `cart.js`: Shopping cart functionality
-- `style.css`: Styling for the shopping cart application
+- `Q2/products.html`, `Q2/products.js`: Product listing page
+- `Q2/cart.html`, `Q2/cart.js`: Shopping cart functionality
+- `Q2/style.css`: Styling for the shopping cart application
 
 ### Q3: Quiz Application
 
-- `question.html`, `question.js`: Quiz questions interface
-- `result.html`, `result.js`: Quiz results display
-- `style.css`: Styling for the quiz application
+- `Q3/question.html`, `Q3/question.js`: Quiz questions interface
+- `Q3/result.html`, `Q3/result.js`: Quiz results display
+- `Q3/style.css`: Styling for the quiz application
 
 ## Topics Covered
 
@@ -40,9 +40,9 @@ No special setup required for this lab. The web applications can be viewed direc
 
 1. For each application, start with the initial page:
 
-   - Q1: Open `step1.html` to begin the multi-step form
-   - Q2: Open `products.html` to view products and add them to cart
-   - Q3: Open `question.html` to start the quiz
+   - Q1: Open `Q1/step1.html` to begin the multi-step form
+   - Q2: Open `Q2/products.html` to view products and add them to cart
+   - Q3: Open `Q3/question.html` to start the quiz
 
 2. Follow the application flow:
 

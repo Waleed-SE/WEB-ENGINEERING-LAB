@@ -67,7 +67,16 @@ This lab focuses on building full-stack web applications using the MERN stack (M
    ```
 3. MongoDB will be available at `mongodb://localhost:27017`
 4. The database will be created automatically when the server connects to MongoDB
-5. Reference schema structures are available in the `database_schema.js` file
+5. Reference schema structures are available in the `database_schema.js` file. To use these models:
+
+   ```javascript
+   // In your server.js file
+   const { Student, Product, Job, Applicant } = require("./database_schema");
+
+   // Now you can use the models:
+   Student.find({}).then((students) => console.log(students));
+   ```
+
 6. Sample data to import:
    ```
    mongoimport --db WebLab9 --collection students --file Students.json --jsonArray

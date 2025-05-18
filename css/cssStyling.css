@@ -1,0 +1,342 @@
+/* CSS Properties and Their Usage Guide */
+
+/* ===== TEXT FORMATTING ===== */
+
+/* font-family: Sets the typeface for text */
+.font-example {
+  font-family: Arial, Helvetica, sans-serif; /* Primary font with fallbacks */
+}
+/* Why: Changes the visual appearance of text. First font will be used if available, otherwise falls back to alternatives */
+
+/* font-size: Sets the text size */
+.size-example {
+  font-size: 16px; /* Absolute size in pixels */
+  font-size: 1.2rem; /* Relative to root element (html) font size */
+  font-size: 1.5em; /* Relative to parent element font size */
+}
+/* Why: Controls text readability and visual hierarchy. rem is useful for responsive design that scales with user preferences */
+
+/* font-weight: Sets the thickness/boldness of text */
+.weight-example {
+  font-weight: normal; /* Default weight */
+  font-weight: bold; /* Bold text */
+  font-weight: 400; /* Numeric values from 100 (thin) to 900 (heavy) */
+}
+/* Why: Emphasizes text and creates visual contrast in content hierarchy */
+
+/* color: Sets the color of text */
+.color-example {
+  color: blue; /* Named color */
+  color: #ff5733; /* Hexadecimal */
+  color: rgb(255, 87, 51); /* RGB values */
+  color: rgba(255, 87, 51, 0.8); /* RGB with alpha (transparency) */
+}
+/* Why: Improves visual appeal, brand consistency, and directs user attention */
+
+/* text-align: Sets horizontal alignment of text */
+.alignment-example {
+  text-align: left; /* Default in LTR languages */
+  text-align: center; /* Centered text */
+  text-align: right; /* Right-aligned */
+  text-align: justify; /* Spreads text evenly across the width */
+}
+/* Why: Improves readability and creates a balanced visual layout */
+
+/* line-height: Sets vertical spacing between lines of text */
+.line-height-example {
+  line-height: 1.5; /* 1.5 times the font size */
+  line-height: 24px; /* Absolute value */
+}
+/* Why: Improves readability by adding space between lines of text. Values between 1.4-1.6 are considered optimal for body text */
+
+/* text-decoration: Adds decorative lines to text */
+.decoration-example {
+  text-decoration: none; /* Removes default underlines (e.g., from links) */
+  text-decoration: underline; /* Adds underline */
+  text-decoration: line-through; /* Strikethrough text */
+}
+/* Why: Provides visual cues for interactive elements or text status (deleted, emphasized) */
+
+/* text-transform: Changes the capitalization of text */
+.transform-example {
+  text-transform: uppercase; /* ALL CAPS */
+  text-transform: lowercase; /* all lowercase */
+  text-transform: capitalize; /* First Letter Of Each Word Capital */
+}
+/* Why: Used for styling headings, button text, and maintaining consistent appearance regardless of input */
+
+/* ===== BOX MODEL & LAYOUT ===== */
+
+/* width/height: Sets the dimensions of an element */
+.dimension-example {
+  width: 200px; /* Fixed width */
+  height: 100px; /* Fixed height */
+  width: 50%; /* Percentage of parent container */
+  max-width: 800px; /* Maximum width constraint */
+  min-height: 400px; /* Minimum height constraint */
+}
+/* Why: Controls the size of elements for consistent layouts and responsive design */
+
+/* margin: Creates space outside an element */
+.margin-example {
+  margin: 10px; /* All sides */
+  margin: 10px 20px; /* Top/bottom 10px, left/right 20px */
+  margin: 10px 20px 15px 5px; /* Top, right, bottom, left (clockwise) */
+  margin-top: 10px; /* Individual side */
+  margin: 0 auto; /* Horizontally center a block element with defined width */
+}
+/* Why: Creates spacing between elements, prevents overcrowding, and improves readability */
+
+/* padding: Creates space inside an element (between content and border) */
+.padding-example {
+  padding: 20px; /* All sides */
+  padding: 10px 20px; /* Top/bottom 10px, left/right 20px */
+  padding: 10px 20px 15px 5px; /* Top, right, bottom, left (clockwise) */
+  padding-left: 15px; /* Individual side */
+}
+/* Why: Creates internal spacing for better visual appearance and prevents content from touching borders */
+
+/* border: Creates a visible line around an element */
+.border-example {
+  border: 1px solid black; /* Shorthand: width, style, color */
+  border-width: 2px; /* Border thickness */
+  border-style: dashed; /* Border style (solid, dashed, dotted, etc.) */
+  border-color: red; /* Border color */
+  border-bottom: 3px double blue; /* Individual side */
+  border-radius: 5px; /* Rounded corners */
+}
+/* Why: Creates visual separation between elements and defines boundaries */
+
+/* box-sizing: Controls how width and height are calculated */
+.box-sizing-example {
+  box-sizing: content-box; /* Default: width/height apply to content only */
+  box-sizing: border-box; /* Width/height include padding and border */
+}
+/* Why: border-box makes sizing elements more predictable as padding and borders don't add to the specified width/height */
+
+/* display: Controls how an element is rendered in the layout */
+.display-example {
+  display: block; /* Takes full width, creates line break before and after */
+  display: inline; /* Takes only needed width, no line breaks */
+  display: inline-block; /* Mix of inline and block: takes only needed width but respects width/height values */
+  display: flex; /* Creates a flex container for flexible layouts */
+  display: grid; /* Creates a grid container for grid layouts */
+  display: none; /* Hides the element completely */
+}
+/* Why: Controls how elements interact with surrounding content and affects layout flow */
+
+/* position: Controls how an element is positioned */
+.position-example {
+  position: static; /* Default: follows document flow */
+  position: relative; /* Positioned relative to its normal position */
+  position: absolute; /* Positioned relative to nearest positioned ancestor */
+  position: fixed; /* Positioned relative to viewport (stays visible during scroll) */
+  position: sticky; /* Hybrid of relative and fixed */
+  top: 10px; /* Offset properties used with positioned elements */
+  left: 20px;
+  z-index: 10; /* Controls stacking order of positioned elements */
+}
+/* Why: Allows precise placement of elements and creation of overlapping UI components */
+
+/* ===== FLEXBOX ===== */
+
+/* flex container properties */
+.flex-container {
+  display: flex; /* Creates a flex container */
+  flex-direction: row; /* Main axis direction (row, row-reverse, column, column-reverse) */
+  flex-wrap: wrap; /* Controls whether items wrap to new lines */
+  justify-content: space-between; /* Alignment along main axis */
+  align-items: center; /* Alignment along cross axis */
+  gap: 10px; /* Space between flex items */
+}
+/* Why: Creates responsive, flexible layouts that adapt to available space */
+
+/* flex item properties */
+.flex-item {
+  flex-grow: 1; /* How much item grows relative to siblings */
+  flex-shrink: 0; /* How much item shrinks relative to siblings */
+  flex-basis: 200px; /* Initial size before growing/shrinking */
+  flex: 1 0 auto; /* Shorthand: grow, shrink, basis */
+  align-self: flex-end; /* Override container's align-items for this item */
+  order: 2; /* Changes visual order of item */
+}
+/* Why: Controls individual item behavior within a flex container */
+
+/* ===== CSS GRID ===== */
+
+/* grid container properties */
+.grid-container {
+  display: grid; /* Creates a grid container */
+  grid-template-columns: 1fr 2fr 1fr; /* Column sizes (3 columns) */
+  grid-template-rows: 100px auto; /* Row sizes (2 rows) */
+  gap: 20px; /* Space between grid items */
+  grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "footer footer footer"; /* Named grid areas */
+}
+/* Why: Creates two-dimensional layouts with precise control over rows and columns */
+
+/* grid item properties */
+.grid-item {
+  grid-column: 1 / 3; /* Span from column line 1 to 3 */
+  grid-row: 2 / 4; /* Span from row line 2 to 4 */
+  grid-area: main; /* Places item in named grid area */
+}
+/* Why: Controls item placement and spanning within a grid */
+
+/* ===== BACKGROUND & COLORS ===== */
+
+/* background properties */
+.background-example {
+  background-color: #f5f5f5; /* Background color */
+  background-image: url("image.jpg"); /* Background image */
+  background-repeat: no-repeat; /* How/if background image repeats */
+  background-position: center; /* Position of background image */
+  background-size: cover; /* How background image is sized */
+  background: #f5f5f5 url("image.jpg") no-repeat center / cover; /* Shorthand */
+}
+/* Why: Creates visual backdrop for content and establishes visual hierarchy */
+
+/* opacity: Controls element transparency */
+.opacity-example {
+  opacity: 0.8; /* 0 (fully transparent) to 1 (fully opaque) */
+}
+/* Why: Creates visual effects, layering, and focus/deemphasis */
+
+/* ===== TRANSITIONS & ANIMATIONS ===== */
+
+/* transition: Smooth change between property values */
+.transition-example {
+  transition: all 0.3s ease; /* Shorthand: properties, duration, timing function */
+  transition-property: background-color, transform; /* Specific properties to animate */
+  transition-duration: 0.5s; /* Animation duration */
+  transition-timing-function: ease-in-out; /* How animation progresses (linear, ease-in, etc.) */
+  transition-delay: 0.1s; /* Delay before transition starts */
+}
+/* Why: Creates smooth interactions and state changes for better user experience */
+
+/* transform: Modifies an element's appearance */
+.transform-example2 {
+  transform: translateX(20px); /* Move horizontally */
+  transform: scale(1.1); /* Enlarge by 10% */
+  transform: rotate(45deg); /* Rotate by 45 degrees */
+  transform: skew(10deg); /* Skew/distort */
+  transform: translateY(-10px) rotate(5deg); /* Combine transforms */
+}
+/* Why: Creates visual effects and animations without affecting layout flow */
+
+/* animation: Defines keyframe-based animations */
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animation-example {
+  animation: slide-in 1s ease-out forwards; /* Name, duration, timing, fill mode */
+  animation-name: slide-in; /* Animation keyframe name */
+  animation-duration: 1s; /* Animation duration */
+  animation-timing-function: ease-out; /* How animation progresses */
+  animation-delay: 0.5s; /* Delay before starting */
+  animation-iteration-count: 2; /* Number of repeats (infinite for endless) */
+  animation-direction: alternate; /* Play direction (normal, reverse, alternate) */
+  animation-fill-mode: forwards; /* How element is styled before/after animation */
+}
+/* Why: Creates complex motion effects for enhanced user interfaces */
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Media queries: Apply styles based on device characteristics */
+@media screen and (max-width: 768px) {
+  .responsive-example {
+    flex-direction: column;
+    font-size: 14px;
+  }
+}
+/* Why: Adapts layout and styling for different screen sizes and devices */
+
+/* viewport units: Responsive units based on viewport dimensions */
+.viewport-units-example {
+  width: 50vw; /* 50% of viewport width */
+  height: 10vh; /* 10% of viewport height */
+  font-size: 2vmin; /* 2% of viewport's smaller dimension */
+  padding: 3vmax; /* 3% of viewport's larger dimension */
+}
+/* Why: Creates truly responsive layouts that adapt to viewport size */
+
+/* ===== MISCELLANEOUS EFFECTS ===== */
+
+/* box-shadow: Adds shadow effect to elements */
+.shadow-example {
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2); /* Offset-x, offset-y, blur, color */
+  box-shadow: inset 0 0 5px #000; /* Inner shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1),
+    /* Multiple shadows */ 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+/* Why: Adds depth, emphasis, and separation between elements */
+
+/* text-shadow: Adds shadow effect to text */
+.text-shadow-example {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Offset-x, offset-y, blur, color */
+}
+/* Why: Improves text readability on variable backgrounds and adds visual emphasis */
+
+/* filter: Applies visual effects to elements */
+.filter-example {
+  filter: blur(5px); /* Blurs the element */
+  filter: brightness(120%); /* Adjusts brightness */
+  filter: contrast(150%); /* Adjusts contrast */
+  filter: grayscale(100%); /* Converts to grayscale */
+  filter: sepia(70%); /* Applies sepia tone */
+  filter: drop-shadow(
+    2px 4px 6px black
+  ); /* Adds shadow that respects transparency */
+}
+/* Why: Creates visual effects without modifying the original image/element */
+
+/* overflow: Controls what happens when content exceeds element dimensions */
+.overflow-example {
+  overflow: visible; /* Content flows outside container (default) */
+  overflow: hidden; /* Content is clipped when it exceeds container */
+  overflow: scroll; /* Always shows scrollbars */
+  overflow: auto; /* Shows scrollbars only when needed */
+}
+/* Why: Manages content that exceeds container dimensions, preventing layout issues */
+
+/* cursor: Defines mouse cursor appearance */
+.cursor-example {
+  cursor: pointer; /* Hand icon for clickable elements */
+  cursor: text; /* Text insertion cursor */
+  cursor: move; /* Move icon for draggable elements */
+  cursor: not-allowed; /* Prohibited action */
+}
+/* Why: Provides visual feedback about possible interactions with elements */
+
+/* ===== BEST PRACTICES ===== */
+
+/* CSS variables: Reusable values */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --text-color: #333;
+  --spacing-unit: 8px;
+}
+
+.variables-example {
+  color: var(--text-color);
+  margin: calc(var(--spacing-unit) * 2);
+  border-color: var(--primary-color);
+}
+/* Why: Improves maintainability by centralizing common values and enabling theme switching */
+
+/* CSS custom properties with fallbacks */
+.fallback-example {
+  color: var(--undefined-color, #333); /* Fallback if variable not defined */
+}
+/* Why: Provides graceful degradation when variables aren't supported or defined */

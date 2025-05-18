@@ -13,6 +13,9 @@ CREATE TABLE IF NOT EXISTS users (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Create index on email for faster lookups
+CREATE INDEX idx_users_email ON users(email);
+
 -- Optional: Insert sample data
 INSERT INTO users (name, email, password) VALUES 
   ('John Doe', 'john@example.com', 'password123'),

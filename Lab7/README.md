@@ -79,7 +79,7 @@ This lab introduces server-side JavaScript using Node.js and Express framework, 
    ```
    npm start
    ```
-2. The server will run on default port (typically port 3000)
+2. The server will run on port 3000
 3. Access the API endpoints through a web browser or tools like Postman
 
 ## API Endpoints
